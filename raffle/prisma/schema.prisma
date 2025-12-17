@@ -1,0 +1,104 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Admin users for the dashboard
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String   // bcrypt hashed
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Raffle entries from ticket purchases
+model Entry {
+  id            String   @id @default(cuid())
+  ticketId      String   @unique // Unique ticket ID for wheel of names
+  email         String
+  name          String
+  ticketType    String   // starter, supporter, connector, community_builder, school_champion
+  ticketCount   Int      // Number of tickets in this entry
+  purchaseType  String   // 'paid' or 'free'
+  stripePaymentId String? // Stripe payment intent ID if paid
+  amount        Float?   // Amount paid in dollars
+  status        String   @default("active") // active, winner, expired
+  drawingDate   String?  // Which drawing this entry is for (all drawings if null)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// Free ticket task submissions
+model FreeTicketSubmission {
+  id          String   @id @default(cuid())
+  email       String
+  name        String
+  taskType    String   // lunch_invite, active_listening, gratitude_note, device_free_dinner
+  proofUrl    String   // URL to uploaded proof image/video
+  status      String   @default("pending") // pending, approved, rejected
+  reviewedAt  DateTime?
+  reviewedBy  String?  // Admin who reviewed
+  entryId     String?  // Created entry ID if approved
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Prizes that can be won
+model Prize {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  imageUrl    String
+  value       Float?
+  sponsor     String?
+  sponsorUrl  String?
+  drawingDate String   // Which drawing this prize is for
+  isActive    Boolean  @default(true)
+  order       Int      @default(0) // Display order
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Drawing dates and results
+model Drawing {
+  id          String   @id @default(cuid())
+  date        String   // e.g., "Dec 1", "Dec 15"
+  fullDate    DateTime // Actual date/time of drawing
+  status      String   @default("upcoming") // upcoming, live, completed
+  winnerId    String?  // Entry ID of winner
+  winnerName  String?
+  prizeId     String?
+  videoUrl    String?  // Recording of wheel spin
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Site settings (hero image, text, etc.)
+model SiteSettings {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String   @db.Text
+  type        String   @default("text") // text, image, json
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Uploaded files tracking
+model Upload {
+  id          String   @id @default(cuid())
+  filename    String
+  originalName String
+  mimeType    String
+  size        Int
+  url         String
+  purpose     String   // proof, prize, hero, etc.
+  createdAt   DateTime @default(now())
+}

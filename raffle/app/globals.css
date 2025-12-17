@@ -1,0 +1,384 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --color-navy: #0f172a;
+  --color-navy-light: #1e293b;
+  --color-teal: #14b8a6;
+  --color-teal-dark: #0d9488;
+  --color-teal-light: #5eead4;
+  --color-cream: #fefce8;
+  --color-white: #ffffff;
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--color-white);
+  color: var(--color-navy);
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-500);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Button base styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--color-teal);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-teal-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--color-navy);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: var(--color-navy-light);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-navy);
+  color: var(--color-navy);
+}
+
+.btn-outline:hover {
+  background: var(--color-navy);
+  color: white;
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section styles */
+.section {
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Gradient backgrounds */
+.gradient-hero {
+  background: linear-gradient(135deg, var(--color-cream) 0%, white 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes spin-wheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-wheel {
+  animation: spin-wheel 3s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards;
+}
+
+/* Ticket card selection */
+.ticket-card {
+  border: 2px solid var(--color-gray-200);
+  transition: all 0.2s ease;
+}
+
+.ticket-card:hover {
+  border-color: var(--color-teal);
+}
+
+.ticket-card.selected {
+  border-color: var(--color-teal);
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.05) 0%, white 100%);
+}
+
+.ticket-card.popular {
+  position: relative;
+}
+
+.ticket-card.popular::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-teal);
+  color: white;
+  text-align: center;
+  padding: 0.25rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Task card selection */
+.task-card {
+  border: 2px solid var(--color-gray-200);
+  transition: all 0.2s ease;
+}
+
+.task-card:hover {
+  border-color: var(--color-teal);
+}
+
+.task-card.selected {
+  border-color: var(--color-teal);
+  background: rgba(20, 184, 166, 0.05);
+}
+
+/* Upload area */
+.upload-area {
+  border: 2px dashed var(--color-gray-300);
+  transition: all 0.2s ease;
+}
+
+.upload-area:hover {
+  border-color: var(--color-teal);
+  background: rgba(20, 184, 166, 0.02);
+}
+
+.upload-area.dragging {
+  border-color: var(--color-teal);
+  background: rgba(20, 184, 166, 0.05);
+}
+
+/* Form inputs */
+input, textarea, select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-teal);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+/* Admin dashboard */
+.admin-sidebar {
+  background: var(--color-navy);
+  min-height: 100vh;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-gray-400);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.admin-nav-item:hover {
+  background: var(--color-navy-light);
+  color: white;
+}
+
+.admin-nav-item.active {
+  background: var(--color-teal);
+  color: white;
+}
+
+/* Wheel of Names */
+.wheel-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--color-teal) 0deg 30deg,
+    var(--color-navy) 30deg 60deg,
+    var(--color-teal-light) 60deg 90deg,
+    var(--color-gray-700) 90deg 120deg,
+    var(--color-teal) 120deg 150deg,
+    var(--color-navy) 150deg 180deg,
+    var(--color-teal-light) 180deg 210deg,
+    var(--color-gray-700) 210deg 240deg,
+    var(--color-teal) 240deg 270deg,
+    var(--color-navy) 270deg 300deg,
+    var(--color-teal-light) 300deg 330deg,
+    var(--color-gray-700) 330deg 360deg
+  );
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 40px solid var(--color-teal);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Loading spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--color-gray-200);
+  border-top-color: var(--color-teal);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toast notifications */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--color-navy);
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  animation: slideInRight 0.3s ease;
+  z-index: 1000;
+}
+
+.toast.success {
+  background: var(--color-teal);
+}
+
+.toast.error {
+  background: #ef4444;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
