@@ -21,10 +21,17 @@
   --color-gray-900: #0f172a;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Important: keep global resets in Tailwind's base layer so utilities (pt-*, px-*, etc)
+   can override them. A global `* { padding: 0 }` outside of @layer will break Tailwind spacing. */
+@layer base {
+  *, ::before, ::after {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 html {
