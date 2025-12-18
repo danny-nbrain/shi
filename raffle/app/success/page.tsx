@@ -6,30 +6,25 @@ import Link from 'next/link'
 
 function SuccessContent() {
   const searchParams = useSearchParams()
-  const [ticketId, setTicketId] = useState<string>('')
-  const [loading, setLoading] = useState(true)
+  const sessionId = searchParams.get('session_id')
+  // If we have a Stripe session_id, we treat `null` as "still loading".
+  const [ticketId, setTicketId] = useState<string | null>(() => (sessionId ? null : ''))
+  const loading = Boolean(sessionId) && ticketId === null
 
   useEffect(() => {
     // Get session_id from URL if coming from Stripe
-    const sessionId = searchParams.get('session_id')
-    
-    if (sessionId) {
-      // Verify the session and get ticket info
-      fetch(`/api/verify-payment?session_id=${sessionId}`)
-        .then(res => res.json())
-        .then(data => {
-          if (data.ticketId) {
-            setTicketId(data.ticketId)
-          }
-          setLoading(false)
-        })
-        .catch(() => {
-          setLoading(false)
-        })
-    } else {
-      setLoading(false)
-    }
-  }, [searchParams])
+    if (!sessionId) return
+
+    // Verify the session and get ticket info
+    fetch(`/api/verify-payment?session_id=${sessionId}`)
+      .then(res => res.json())
+      .then(data => {
+        setTicketId(data.ticketId || '')
+      })
+      .catch(() => {
+        setTicketId('')
+      })
+  }, [sessionId])
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex items-center justify-center px-4">

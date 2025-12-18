@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export default function AdminLoginPage() {
   const [username, setUsername] = useState('')
@@ -128,9 +129,9 @@ export default function AdminLoginPage() {
         </form>
 
         <p className="text-center text-gray-500 text-sm mt-6">
-          <a href="/" className="text-teal-500 hover:text-teal-400">
+          <Link href="/" className="text-teal-500 hover:text-teal-400">
             ← Back to Raffle Site
-          </a>
+          </Link>
         </p>
       </div>
     </div>

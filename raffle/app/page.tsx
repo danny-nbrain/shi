@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import ImpactSection from './components/ImpactSection'
@@ -10,7 +9,7 @@ import TransparencySection from './components/TransparencySection'
 import Footer from './components/Footer'
 
 export default function Home() {
-  const [showAdminButton, setShowAdminButton] = useState(true)
+  const showAdminButton = process.env.NODE_ENV !== 'production'
 
   const scrollToFreeTicket = () => {
     const ticketsSection = document.getElementById('tickets')
