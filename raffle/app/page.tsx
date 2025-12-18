@@ -1,5 +1,6 @@
 'use client'
 
+import { useSearchParams } from 'next/navigation'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import ImpactSection from './components/ImpactSection'
@@ -9,7 +10,10 @@ import TransparencySection from './components/TransparencySection'
 import Footer from './components/Footer'
 
 export default function Home() {
-  const showAdminButton = process.env.NODE_ENV !== 'production'
+  const searchParams = useSearchParams()
+  // Keep the public UI clean: only show the floating admin shortcut when explicitly requested.
+  // Example: https://raffle.socialhealthinitiative.org/?admin=1
+  const showAdminButton = searchParams.get('admin') === '1'
 
   const scrollToFreeTicket = () => {
     const ticketsSection = document.getElementById('tickets')
