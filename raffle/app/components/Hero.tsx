@@ -15,39 +15,39 @@ export default function Hero({ onEarnFreeTicket }: HeroProps) {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/85 to-white"
+        className="absolute inset-0 bg-gradient-to-b from-slate-950/35 via-slate-900/10 to-white"
       />
 
       {/* Content */}
       <div className="relative">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-28 pb-16 text-center">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-28 pb-14 text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-700">
+          <div className="inline-flex items-center gap-2 rounded-full bg-slate-900/70 px-4 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-50" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400" />
             </span>
             SHI Christmas Countdown Raffle
           </div>
 
           {/* Headline */}
-          <h1 className="mx-auto mt-6 max-w-4xl text-balance text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            <span className="text-slate-900">Win Prizes. </span>
-            <span className="text-teal-500">Build Connection.</span>
+          <h1 className="mx-auto mt-7 max-w-4xl text-balance text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <span className="text-white">Win Prizes. </span>
+            <span className="text-teal-400">Build Connection.</span>
             <br className="hidden sm:block" />
-            <span className="text-slate-500">Strengthen Utah Schools.</span>
+            <span className="text-white/90">Strengthen Utah Schools.</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-slate-600 sm:text-lg">
+          <div className="mx-auto mt-6 max-w-2xl rounded-xl border border-white/40 bg-white/75 px-6 py-4 text-pretty text-base font-medium leading-relaxed text-slate-900 shadow-lg backdrop-blur sm:text-lg">
             Kids today are surrounded by people, yet many feel alone. Every ticket funds Social Health education to teach real-world connection skills.
-          </p>
+          </div>
 
           {/* CTA Buttons */}
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="#tickets"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-500 px-10 py-4 text-lg font-semibold text-white shadow-lg shadow-teal-500/25 transition-all hover:-translate-y-0.5 hover:bg-teal-600 hover:shadow-xl"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-500 px-10 py-4 text-lg font-semibold text-slate-900 shadow-lg shadow-teal-500/30 transition-all hover:-translate-y-0.5 hover:bg-teal-400 hover:shadow-xl"
             >
               Get Tickets
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,15 +57,15 @@ export default function Hero({ onEarnFreeTicket }: HeroProps) {
             <button
               type="button"
               onClick={onEarnFreeTicket}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-slate-200 bg-white/95 px-10 py-4 text-lg font-semibold text-slate-900 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-white hover:shadow-lg"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/55 bg-white/20 px-10 py-4 text-lg font-semibold text-white shadow-sm backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/25 hover:shadow-lg"
             >
               Earn Free Ticket
             </button>
           </div>
         </div>
 
-        {/* Features Bar (slightly overlaps next section like the desired design) */}
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 -mb-12">
+        {/* Features Bar */}
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-14">
           <div className="grid overflow-hidden rounded-2xl border border-gray-200 bg-white/95 shadow-2xl backdrop-blur md:grid-cols-3 md:divide-x md:divide-y-0 divide-y divide-gray-100">
             <div className="p-7 text-center">
               <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100">
