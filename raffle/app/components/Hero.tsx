@@ -6,34 +6,34 @@ interface HeroProps {
 
 export default function Hero({ onEarnFreeTicket }: HeroProps) {
   return (
-    <section className="relative pt-16 pb-32 overflow-hidden">
+    <section className="relative pt-16 overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white">
       {/* Background Image - using CSS background for better control */}
       <div 
         className="absolute inset-0"
         style={{
           backgroundImage: 'url(/photo-1529156069898-49953e39b3ac.jpeg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center top',
+          backgroundPosition: 'center 20%',
           opacity: 1,
           zIndex: 0,
         }}
       />
-      {/* Gradient overlay - lighter to show more of the image */}
+      {/* Gradient overlay - more opacity for better text readability */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 0.95) 70%, rgba(255, 255, 255, 1) 100%)',
+          background: 'linear-gradient(to bottom, rgba(249, 250, 251, 0.88) 0%, rgba(255, 255, 255, 0.92) 35%, rgba(255, 255, 255, 0.97) 65%, rgba(255, 255, 255, 1) 90%)',
           zIndex: 1,
         }}
       />
 
       {/* Content */}
-      <div className="relative px-4 sm:px-6 lg:px-8 pt-32 pb-28" style={{ zIndex: 10, maxWidth: '1280px', margin: '0 auto' }}>
-        <div className="text-center" style={{ maxWidth: '950px', margin: '0 auto' }}>
+      <div className="relative px-4 sm:px-6 lg:px-8 pt-28 pb-20" style={{ zIndex: 10, maxWidth: '1200px', margin: '0 auto' }}>
+        <div className="text-center" style={{ maxWidth: '900px', margin: '0 auto' }}>
           {/* Badge */}
           <div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8"
-            style={{ backgroundColor: 'rgba(20, 184, 166, 0.1)', color: '#0f766e' }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
+            style={{ backgroundColor: 'rgba(20, 184, 166, 0.12)', color: '#0f766e', border: '1px solid rgba(20, 184, 166, 0.2)' }}
           >
             <span className="relative flex" style={{ height: '8px', width: '8px' }}>
               <span 
@@ -50,14 +50,14 @@ export default function Hero({ onEarnFreeTicket }: HeroProps) {
 
           {/* Headline */}
           <h1 
-            className="font-extrabold mb-8"
+            className="font-extrabold mb-6"
             style={{ 
-              fontSize: 'clamp(2.25rem, 5vw, 4.25rem)', 
-              lineHeight: '1.2',
+              fontSize: 'clamp(2rem, 4.5vw, 3.75rem)', 
+              lineHeight: '1.15',
               color: '#1e293b',
-              letterSpacing: '-0.02em',
-              paddingLeft: '1rem',
-              paddingRight: '1rem'
+              letterSpacing: '-0.025em',
+              maxWidth: '850px',
+              margin: '0 auto 1.5rem'
             }}
           >
             <span style={{ color: '#1e293b' }}>Win Prizes. </span>
@@ -68,21 +68,19 @@ export default function Hero({ onEarnFreeTicket }: HeroProps) {
 
           {/* Subheadline */}
           <p 
-            className="mb-12 mx-auto"
+            className="mb-10 mx-auto"
             style={{ 
-              fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
+              fontSize: 'clamp(1rem, 1.8vw, 1.125rem)',
               color: '#475569',
-              maxWidth: '750px',
-              lineHeight: '1.75',
-              paddingLeft: '1rem',
-              paddingRight: '1rem'
+              maxWidth: '700px',
+              lineHeight: '1.7'
             }}
           >
             Kids today are surrounded by people, yet many feel alone. Every ticket funds Social Health education to teach real-world connection skills.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <a
               href="#tickets"
               className="inline-flex items-center justify-center gap-2 font-semibold text-lg transition-all hover:-translate-y-1 hover:shadow-xl"
@@ -120,18 +118,18 @@ export default function Hero({ onEarnFreeTicket }: HeroProps) {
       </div>
 
       {/* Features Bar */}
-      <div className="relative px-4 sm:px-6" style={{ zIndex: 10, maxWidth: '1150px', margin: '-4rem auto 0' }}>
+      <div className="relative px-4 sm:px-6 pb-24" style={{ zIndex: 10, maxWidth: '1100px', margin: '3rem auto 0' }}>
         <div 
           className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x"
           style={{
             backgroundColor: 'white',
             borderRadius: '1.25rem',
-            boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.2)',
-            border: '1px solid #e2e8f0',
+            boxShadow: '0 20px 50px -12px rgba(0, 0, 0, 0.15)',
+            border: '1px solid #e5e7eb',
             overflow: 'hidden',
           }}
         >
-          <div className="p-8 text-center" style={{ borderColor: '#f1f5f9' }}>
+          <div className="p-7 text-center" style={{ borderColor: '#f1f5f9' }}>
             <div 
               className="flex items-center justify-center mx-auto mb-3"
               style={{ width: '48px', height: '48px', backgroundColor: '#f1f5f9', borderRadius: '0.75rem' }}
@@ -146,7 +144,7 @@ export default function Hero({ onEarnFreeTicket }: HeroProps) {
             <h3 className="font-bold mb-1" style={{ color: '#1e293b' }}>Bi-Weekly Drawings</h3>
             <p className="text-sm" style={{ color: '#6b7280' }}>Dec 1 • Dec 15 • Dec 22 • Dec 29</p>
           </div>
-          <div className="p-8 text-center" style={{ borderColor: '#f1f5f9' }}>
+          <div className="p-7 text-center" style={{ borderColor: '#f1f5f9' }}>
             <div 
               className="flex items-center justify-center mx-auto mb-3"
               style={{ width: '48px', height: '48px', backgroundColor: '#f1f5f9', borderRadius: '0.75rem' }}
@@ -158,7 +156,7 @@ export default function Hero({ onEarnFreeTicket }: HeroProps) {
             <h3 className="font-bold mb-1" style={{ color: '#1e293b' }}>Tickets Re-Enter</h3>
             <p className="text-sm" style={{ color: '#6b7280' }}>One ticket stays in the pot for ALL drawings.</p>
           </div>
-          <div className="p-8 text-center" style={{ borderColor: '#f1f5f9' }}>
+          <div className="p-7 text-center" style={{ borderColor: '#f1f5f9' }}>
             <div 
               className="flex items-center justify-center mx-auto mb-3"
               style={{ width: '48px', height: '48px', backgroundColor: '#f1f5f9', borderRadius: '0.75rem' }}

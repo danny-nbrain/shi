@@ -79,18 +79,18 @@ export default function TicketsSection({ showFreeTicket = true, onEarnFreeTicket
   }
 
   return (
-    <section id="tickets" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8">
+    <section id="tickets" className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-6">
           {/* Left: Purchase Tickets */}
-          <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 bg-slate-800 text-white rounded-full flex items-center justify-center font-bold text-sm">
+          <div className="bg-white rounded-2xl border border-gray-200 p-7 shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-3 mb-1.5">
+              <div className="w-8 h-8 bg-slate-800 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                 1
               </div>
-              <h2 className="text-2xl font-bold text-slate-800">Purchase Tickets</h2>
+              <h2 className="text-xl font-bold text-slate-800">Purchase Tickets</h2>
             </div>
-            <p className="text-gray-600 mb-6 ml-11">
+            <p className="text-gray-600 text-sm mb-6 ml-11">
               Select a package below. The more you buy, the more connection you fund.
             </p>
 
@@ -269,14 +269,14 @@ function FreeTicketSection({ onSubmit }: FreeTicketSectionProps) {
   }
 
   return (
-    <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
-      <div className="flex items-center gap-3 mb-2">
-        <div className="w-8 h-8 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+    <div className="bg-white rounded-2xl border border-gray-200 p-7 shadow-sm hover:shadow-md transition-shadow">
+      <div className="flex items-center gap-3 mb-1.5">
+        <div className="w-8 h-8 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
           2
         </div>
-        <h2 className="text-2xl font-bold text-slate-800">Earn a Free Ticket</h2>
+        <h2 className="text-xl font-bold text-slate-800">Earn a Free Ticket</h2>
       </div>
-      <p className="text-gray-600 mb-6 ml-11">
+      <p className="text-gray-600 text-sm mb-6 ml-11">
         No purchase necessary. Complete a weekly Connection Task to earn an entry. Connection is a skill—practice it to win.
       </p>
 

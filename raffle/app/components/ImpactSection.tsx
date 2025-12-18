@@ -4,14 +4,14 @@ import Image from 'next/image'
 
 export default function ImpactSection() {
   return (
-    <section id="impact" className="pt-24 pb-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section id="impact" className="pt-20 pb-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-[400px_1fr] gap-16 items-center">
           {/* Left: Founder Image & Info */}
           <div className="relative">
             {/* Red accent card behind */}
-            <div className="absolute -left-4 -top-4 w-full h-full bg-gradient-to-br from-red-500 to-pink-500 rounded-3xl transform rotate-3 opacity-20"></div>
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl max-w-md mx-auto lg:mx-0 bg-gradient-to-br from-slate-800 to-slate-900">
+            <div className="absolute -left-6 -top-6 w-full h-full bg-gradient-to-br from-red-500 to-pink-600 rounded-3xl transform rotate-3 opacity-15"></div>
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl max-w-sm mx-auto lg:mx-0 bg-gradient-to-br from-slate-800 to-slate-900">
               <Image
                 src="/david-photo.jpg.png"
                 alt="David Kozlowski"
@@ -27,23 +27,23 @@ export default function ImpactSection() {
           </div>
 
           {/* Right: Quote & Content */}
-          <div className="lg:pl-8">
+          <div className="lg:pl-4">
             {/* Quote Icon */}
-            <div className="mb-6">
-              <svg className="w-12 h-12 text-teal-500 opacity-20" fill="currentColor" viewBox="0 0 24 24">
+            <div className="mb-4">
+              <svg className="w-10 h-10 text-teal-500 opacity-15" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
                 <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
               </svg>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-2">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-800 mb-1.5 leading-tight">
               Let me tell you something straight:
             </h2>
-            <h2 className="text-2xl sm:text-3xl font-bold text-teal-600 mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-teal-600 mb-6 leading-tight">
               When people learn how to connect, everything changes.
             </h2>
 
-            <div className="space-y-6 text-gray-600">
+            <div className="space-y-5 text-gray-600 text-base leading-relaxed">
               <p className="leading-relaxed">
                 &ldquo;For years I watched teens, families, and entire communities struggle — not because they were broken, but because they were disconnected. Once we started teaching Social Health, the shift was immediate. Kids opened up. Families talked again.&rdquo;
               </p>
