@@ -19,26 +19,27 @@ export const TICKET_PACKAGES = {
     stripeLink: 'https://buy.stripe.com/aFafZg9y65fmdAM3yN4sE01',
   },
   connector: {
-    name: 'Community Builder',
+    name: 'Connector',
     tickets: 10,
     price: 35,
     pricePerEntry: 3.50,
-    stripeLink: 'https://buy.stripe.com/cNiaEWcKi5fm68k4CR4sE02',
+    // TODO: Set the correct $35 payment link for the 10-ticket package.
+    stripeLink: '',
     popular: true,
   },
   community_builder: {
-    name: 'School Champion',
+    name: 'Community Builder',
     tickets: 25,
     price: 75,
     pricePerEntry: 3.00,
-    stripeLink: 'https://buy.stripe.com/6oUaEW5hQbDK40c4CR4sE03',
+    stripeLink: 'https://buy.stripe.com/cNiaEWcKi5fm68k4CR4sE02',
   },
   school_champion: {
-    name: 'Visionary',
+    name: 'School Champion',
     tickets: 100,
     price: 200,
     pricePerEntry: 2.00,
-    stripeLink: 'https://buy.stripe.com/bJe7sKcKiePW0O01qF4sE04',
+    stripeLink: 'https://buy.stripe.com/6oUaEW5hQbDK40c4CR4sE03',
   },
 } as const
 

@@ -10,6 +10,7 @@ interface TicketPackage {
   pricePerEntry: number
   stripeLink: string
   popular?: boolean
+  disabled?: boolean
   subtitle: string
 }
 
@@ -39,7 +40,10 @@ const TICKET_PACKAGES: TicketPackage[] = [
     tickets: 10,
     price: 35,
     pricePerEntry: 3.50,
-    stripeLink: 'https://buy.stripe.com/cNiaEWcKi5fm68k4CR4sE02',
+    // NOTE: The existing Stripe link we had here points to $75 / 25 tickets.
+    // We need the correct $35 payment link for the 10-ticket package.
+    stripeLink: '',
+    disabled: true,
     popular: true,
   },
   {
@@ -49,7 +53,8 @@ const TICKET_PACKAGES: TicketPackage[] = [
     tickets: 25,
     price: 75,
     pricePerEntry: 3.00,
-    stripeLink: 'https://buy.stripe.com/6oUaEW5hQbDK40c4CR4sE03',
+    // Verified: $75 "Social Health Community Builder Ticket" (25 tickets)
+    stripeLink: 'https://buy.stripe.com/cNiaEWcKi5fm68k4CR4sE02',
   },
   {
     id: 'school_champion',
@@ -58,7 +63,8 @@ const TICKET_PACKAGES: TicketPackage[] = [
     tickets: 100,
     price: 200,
     pricePerEntry: 2.00,
-    stripeLink: 'https://buy.stripe.com/bJe7sKcKiePW0O01qF4sE04',
+    // Verified: $200 "Social Health School Champion Ticket" (100 tickets)
+    stripeLink: 'https://buy.stripe.com/6oUaEW5hQbDK40c4CR4sE03',
   },
 ]
 
@@ -71,9 +77,10 @@ export default function TicketsSection({ showFreeTicket = true, onEarnFreeTicket
   const [selectedPackage, setSelectedPackage] = useState<string>('connector')
 
   const selected = TICKET_PACKAGES.find(p => p.id === selectedPackage)
+  const canCheckout = Boolean(selected?.stripeLink) && !selected?.disabled
 
   const handleCheckout = () => {
-    if (selected) {
+    if (selected?.stripeLink && !selected.disabled) {
       window.open(selected.stripeLink, '_blank')
     }
   }
@@ -104,7 +111,8 @@ export default function TicketsSection({ showFreeTicket = true, onEarnFreeTicket
                     selectedPackage === pkg.id
                       ? 'border-teal-500 bg-teal-50/50 shadow-md'
                       : 'border-gray-200 hover:border-gray-300'
-                  } ${pkg.popular ? 'pt-8' : ''}`}
+                  } ${pkg.popular ? 'pt-8' : ''} ${pkg.disabled ? 'opacity-60 cursor-not-allowed hover:shadow-none' : ''}`}
+                  disabled={pkg.disabled}
                 >
                   {pkg.popular && (
                     <div className="absolute top-0 left-0 right-0 bg-teal-500 text-white text-[10px] font-bold tracking-wider text-center py-1 rounded-t-lg">
@@ -138,13 +146,15 @@ export default function TicketsSection({ showFreeTicket = true, onEarnFreeTicket
             <div className="mt-8">
               <button
                 onClick={handleCheckout}
-                className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 shadow-lg"
+                disabled={!canCheckout}
+                data-stripe-link={selected?.stripeLink || ''}
+                className="w-full bg-slate-800 hover:bg-slate-900 disabled:bg-slate-400 disabled:cursor-not-allowed text-white py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 disabled:hover:translate-y-0 shadow-lg"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <rect width="18" height="11" x="3" y="11" rx="2" ry="2" strokeWidth="2" />
                   <path d="M7 11V7a5 5 0 0 1 10 0v4" strokeWidth="2" />
                 </svg>
-                Checkout - ${selected?.price} Donation
+                {canCheckout ? `Checkout - $${selected?.price} Donation` : 'Checkout Unavailable'}
               </button>
               <p className="text-center text-sm text-gray-500 mt-3">
                 Secure checkout via Stripe/PayPal. Receipts sent automatically.
