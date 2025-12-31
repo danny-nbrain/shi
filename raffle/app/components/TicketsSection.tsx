@@ -10,7 +10,6 @@ interface TicketPackage {
   pricePerEntry: number
   stripeLink: string
   popular?: boolean
-  disabled?: boolean
   subtitle: string
 }
 
@@ -32,19 +31,6 @@ const TICKET_PACKAGES: TicketPackage[] = [
     price: 20,
     pricePerEntry: 4.00,
     stripeLink: 'https://buy.stripe.com/aFafZg9y65fmdAM3yN4sE01',
-  },
-  {
-    id: 'connector',
-    name: '10 Tickets',
-    subtitle: 'Connector',
-    tickets: 10,
-    price: 35,
-    pricePerEntry: 3.50,
-    // NOTE: The existing Stripe link we had here points to $75 / 25 tickets.
-    // We need the correct $35 payment link for the 10-ticket package.
-    stripeLink: '',
-    disabled: true,
-    popular: true,
   },
   {
     id: 'community_builder',
@@ -74,13 +60,13 @@ interface TicketsSectionProps {
 }
 
 export default function TicketsSection({ showFreeTicket = true, onEarnFreeTicket }: TicketsSectionProps) {
-  const [selectedPackage, setSelectedPackage] = useState<string>('connector')
+  const [selectedPackage, setSelectedPackage] = useState<string>('community_builder')
 
   const selected = TICKET_PACKAGES.find(p => p.id === selectedPackage)
-  const canCheckout = Boolean(selected?.stripeLink) && !selected?.disabled
+  const canCheckout = Boolean(selected?.stripeLink)
 
   const handleCheckout = () => {
-    if (selected?.stripeLink && !selected.disabled) {
+    if (selected?.stripeLink) {
       window.open(selected.stripeLink, '_blank')
     }
   }
@@ -111,8 +97,7 @@ export default function TicketsSection({ showFreeTicket = true, onEarnFreeTicket
                     selectedPackage === pkg.id
                       ? 'border-teal-500 bg-teal-50/50 shadow-md'
                       : 'border-gray-200 hover:border-gray-300'
-                  } ${pkg.popular ? 'pt-8' : ''} ${pkg.disabled ? 'opacity-60 cursor-not-allowed hover:shadow-none' : ''}`}
-                  disabled={pkg.disabled}
+                  } ${pkg.popular ? 'pt-8' : ''}`}
                 >
                   {pkg.popular && (
                     <div className="absolute top-0 left-0 right-0 bg-teal-500 text-white text-[10px] font-bold tracking-wider text-center py-1 rounded-t-lg">
