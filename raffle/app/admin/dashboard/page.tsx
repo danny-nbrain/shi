@@ -429,12 +429,13 @@ function DrawingsTab() {
     <div>
       <h2 className="text-2xl font-bold text-slate-800 mb-6">Drawing Management</h2>
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
         {[
-          { date: 'Dec 1', fullDate: '2024-12-01' },
-          { date: 'Dec 15', fullDate: '2024-12-15' },
-          { date: 'Dec 22', fullDate: '2024-12-22' },
-          { date: 'Dec 29', fullDate: '2024-12-29' },
+          { date: 'Jan 15', fullDate: '2026-01-15' },
+          { date: 'Feb 1', fullDate: '2026-02-01' },
+          { date: 'Feb 15', fullDate: '2026-02-15' },
+          { date: 'Mar 1', fullDate: '2026-03-01' },
+          { date: 'Mar 15', fullDate: '2026-03-15' },
         ].map((d) => {
           const drawing = drawings.find(dr => dr.date === d.date)
           return (
@@ -532,6 +533,7 @@ function SettingsTab() {
     </div>
   )
 }
+
 
 
 

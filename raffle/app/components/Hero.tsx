@@ -77,7 +77,7 @@ export default function Hero({ onEarnFreeTicket }: HeroProps) {
                 </svg>
               </div>
               <h3 className="font-bold text-slate-900">Bi-Weekly Drawings</h3>
-              <p className="mt-1 text-sm text-slate-500">Dec 1 • Dec 15 • Dec 22 • Dec 29</p>
+              <p className="mt-1 text-sm text-slate-500">Jan 15 • Feb 1 • Feb 15 • Mar 1 • Mar 15</p>
             </div>
             <div className="p-7 text-center">
               <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100">

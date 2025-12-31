@@ -21,10 +21,11 @@ async function main() {
 
   // Create default drawings
   const drawings = [
-    { date: 'Dec 1', fullDate: new Date('2024-12-01T18:00:00Z') },
-    { date: 'Dec 15', fullDate: new Date('2024-12-15T18:00:00Z') },
-    { date: 'Dec 22', fullDate: new Date('2024-12-22T18:00:00Z') },
-    { date: 'Dec 29', fullDate: new Date('2024-12-29T18:00:00Z') },
+    { date: 'Jan 15', fullDate: new Date('2026-01-15T18:00:00Z') },
+    { date: 'Feb 1', fullDate: new Date('2026-02-01T18:00:00Z') },
+    { date: 'Feb 15', fullDate: new Date('2026-02-15T18:00:00Z') },
+    { date: 'Mar 1', fullDate: new Date('2026-03-01T18:00:00Z') },
+    { date: 'Mar 15', fullDate: new Date('2026-03-15T18:00:00Z') },
   ]
 
   for (const d of drawings) {
@@ -49,7 +50,7 @@ async function main() {
       imageUrl: '/prize-1.jpg.jpeg',
       sponsor: 'JSM801',
       sponsorUrl: 'https://www.jsm801.com',
-      drawingDate: 'Dec 1',
+      drawingDate: 'Jan 15',
       order: 1,
     },
     {
@@ -58,7 +59,7 @@ async function main() {
       imageUrl: '/prize-2.jpg.jpeg',
       sponsor: 'JSM801',
       sponsorUrl: 'https://www.jsm801.com',
-      drawingDate: 'Dec 1',
+      drawingDate: 'Jan 15',
       order: 2,
     },
   ]
@@ -81,6 +82,7 @@ main()
   .finally(async () => {
     await prisma.$disconnect()
   })
+
 
 
 

@@ -70,7 +70,7 @@ model Prize {
 // Drawing dates and results
 model Drawing {
   id          String   @id @default(cuid())
-  date        String   // e.g., "Dec 1", "Dec 15"
+  date        String   // e.g., "Jan 15", "Feb 1"
   fullDate    DateTime // Actual date/time of drawing
   status      String   @default("upcoming") // upcoming, live, completed
   winnerId    String?  // Entry ID of winner

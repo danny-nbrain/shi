@@ -1,10 +1,11 @@
 'use client'
 
 const drawings = [
-  { date: 'Dec 1', status: 'Next Drawing' },
-  { date: 'Dec 15', status: 'Upcoming' },
-  { date: 'Dec 22', status: 'Upcoming' },
-  { date: 'Dec 29', status: 'Upcoming' },
+  { date: 'Jan 15', status: 'Next Drawing' },
+  { date: 'Feb 1', status: 'Upcoming' },
+  { date: 'Feb 15', status: 'Upcoming' },
+  { date: 'Mar 1', status: 'Upcoming' },
+  { date: 'Mar 15', status: 'Upcoming' },
 ]
 
 export default function TransparencySection() {
