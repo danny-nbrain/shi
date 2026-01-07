@@ -3,18 +3,18 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "SHI Christmas Countdown Raffle | Win Prizes & Build Connection",
-  description: "Win prizes while supporting Social Health education in Utah schools. Every ticket funds real-world connection skills training for students and teachers.",
-  keywords: "raffle, Social Health Initiative, Utah schools, connection, education, nonprofit",
+  description: "Win prizes while supporting Social Health education. Every ticket funds real-world connection skills training for students and teachers.",
+  keywords: "raffle, Social Health Initiative, schools, connection, education, nonprofit",
   openGraph: {
     title: "SHI Christmas Countdown Raffle",
-    description: "Win Prizes. Build Connection. Strengthen Utah Schools.",
+    description: "Win Prizes. Build Connection. Strengthen Schools.",
     type: "website",
     url: "https://raffle.socialhealthinitiative.org",
   },
   twitter: {
     card: "summary_large_image",
     title: "SHI Christmas Countdown Raffle",
-    description: "Win Prizes. Build Connection. Strengthen Utah Schools.",
+    description: "Win Prizes. Build Connection. Strengthen Schools.",
   },
 };
 

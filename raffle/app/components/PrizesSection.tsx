@@ -15,7 +15,7 @@ export default function PrizesSection() {
             Win Custom Kicks by <span className="text-teal-600">JSM801</span>
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto text-base leading-relaxed">
-            We are kicking things off with incredible craftsmanship. Win a pair of reconstructed custom Nikes by Utah&apos;s own{' '}
+            We are kicking things off with incredible craftsmanship. Win a pair of reconstructed custom Nikes by{' '}
             <a href="https://www.jsm801.com" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline font-medium">
               JSM801
             </a>

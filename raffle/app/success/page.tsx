@@ -92,7 +92,7 @@ function SuccessContent() {
             Back to Home
           </Link>
           <a
-            href="https://twitter.com/intent/tweet?text=I%20just%20entered%20the%20SHI%20Christmas%20Countdown%20Raffle%20to%20win%20amazing%20prizes%20while%20supporting%20Social%20Health%20education%20in%20Utah%20schools!%20%F0%9F%8E%89&url=https://raffle.socialhealthinitiative.org"
+            href="https://twitter.com/intent/tweet?text=I%20just%20entered%20the%20SHI%20Christmas%20Countdown%20Raffle%20to%20win%20amazing%20prizes%20while%20supporting%20Social%20Health%20education!%20%F0%9F%8E%89&url=https://raffle.socialhealthinitiative.org"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
@@ -105,7 +105,7 @@ function SuccessContent() {
         </div>
 
         <p className="mt-8 text-gray-500 text-sm">
-          100% of your donation goes to Social Health education in Utah schools.
+          100% of your donation goes to Social Health education.
         </p>
       </div>
     </div>

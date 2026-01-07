@@ -495,7 +495,7 @@ function SettingsTab() {
               </label>
               <input
                 type="text"
-                defaultValue="Win Prizes. Build Connection. Strengthen Utah Schools."
+                defaultValue="Win Prizes. Build Connection. Strengthen Schools."
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
               />
             </div>

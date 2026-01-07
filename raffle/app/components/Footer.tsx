@@ -15,7 +15,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm text-center md:text-left max-w-md">
-              Social Health Initiative is a registered nonprofit. This raffle is conducted in accordance with Utah state laws.
+              Social Health Initiative is a registered nonprofit. This raffle is conducted in accordance with state laws.
             </p>
           </div>
 

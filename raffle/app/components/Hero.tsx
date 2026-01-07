@@ -35,7 +35,7 @@ export default function Hero({ onEarnFreeTicket }: HeroProps) {
             <span className="text-white">Win Prizes. </span>
             <span className="text-teal-400">Build Connection.</span>
             <br className="hidden sm:block" />
-            <span className="text-white/90">Strengthen Utah Schools.</span>
+            <span className="text-white/90">Strengthen Schools.</span>
           </h1>
 
           {/* Subheadline */}
@@ -95,7 +95,7 @@ export default function Hero({ onEarnFreeTicket }: HeroProps) {
                 </svg>
               </div>
               <h3 className="font-bold text-slate-900">100% Impact</h3>
-              <p className="mt-1 text-sm text-slate-500">Funds student & teacher training in Utah.</p>
+              <p className="mt-1 text-sm text-slate-500">Funds student & teacher training.</p>
             </div>
           </div>
         </div>
